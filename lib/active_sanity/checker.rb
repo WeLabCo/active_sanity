@@ -46,6 +46,7 @@ module ActiveSanity
     # Should return: [Account, User]
     def direct_active_record_base_descendants
       ActiveRecord::Base.descendants.select(&:descends_from_active_record?).sort_by(&:name)
+        .reject {|c| c.name.match /Version$/}
     end
 
     # Remove records that are now valid from the list of invalid records.

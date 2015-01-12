@@ -72,7 +72,7 @@ Then /^I should see the following invalid records:$/ do |table|
 end
 
 Then /^I should see "([^"]*)"$/ do |output|
-  @output.should include(output)
+  @output.should =~ /#{output}\n/
 end
 
 Then /^I should not see any invalid records$/ do

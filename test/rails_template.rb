@@ -40,6 +40,9 @@ create_file 'app/models/publisher.rb', "class Publisher < User; end"
 # NotAModel
 create_file 'app/models/not_a_model.rb', "class NotAModel; end"
 
+# Version (paper_trail)
+generate :model, "version item_id:integer item_type:string"
+
 # Add active_sanity
 append_file 'Gemfile', "gem 'active_sanity', :path => '../../'"
 
