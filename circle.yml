@@ -1,0 +1,7 @@
+database:
+  override:
+    - echo "No database"
+test:
+  override:
+    - bundle install
+    - RAILS_ENV=test bundle exec cucumber features
