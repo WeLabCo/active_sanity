@@ -1,3 +1,9 @@
+## 0.3.0
+
+* Add Rails ~4 compatibility.
+* Does not rerun validations for the 'InvalidRecord' model on the second pass.
+* batch size for fetched records is now configurable by setting ActiveSanity::Checker.batch_size after the gem has been loaded ie in 'config\application.rb' (or 'config\environments\test.rb') inside an 'after_initialize' block
+
 ## 0.2.0
 
 * Add Rails ~3.1 compatibility. Pull Request [#6][] by [@skateinmars][].

@@ -7,6 +7,7 @@ validation.
 
 ## Requirements
 
+* ActiveSanity ~0.3 requires Rails ~4.0
 * ActiveSanity ~0.2 requires Rails ~3.1
 * ActiveSanity ~0.1 requires Rails ~3.0
 
@@ -37,6 +38,15 @@ The output might look like the following:
     User        |   1 | { "email" => ["is invalid"] }
     Flight      | 123 | { "arrival_time" => ["can't be nil"], "departure_time" => ["is invalid"] }
     Flight      | 323 | { "arrival_time" => ["can't be nil"] }
+
+By default, the number of records fetched from the database for validation is set to 500. If this causes any issues in your domain/codebase, you can configure it this way in 'config\application.rb' (or 'config\environments\test.rb'):
+
+    class Application < Rails::Application
+      config.after_initialize do
+        ActiveSanity::Checker.batch_size = 439
+      end
+    end
+
 
 ## Contribute & Dev environment
 
